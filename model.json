@@ -1,0 +1,28 @@
+{
+  "layers": [
+    {
+      "type": "input",
+      "shape": [784]
+    },
+    {
+      "type": "dense",
+      "units": 64,
+      "weights": "W1",
+      "biases": "b1"
+    },
+    {
+      "type": "activation",
+      "function": "relu"
+    },
+    {
+      "type": "dense",
+      "units": 10,
+      "weights": "W2",
+      "biases": "b2"
+    },
+    {
+      "type": "activation",
+      "function": "softmax"
+    }
+  ]
+}

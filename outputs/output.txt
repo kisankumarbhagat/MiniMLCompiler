@@ -1,0 +1,20 @@
+Intermediate Representation:
+INPUT shape=[784]
+DENSE units=64 weights=W1 biases=b1
+ACTIVATION function=relu
+DENSE units=10 weights=W2 biases=b2
+ACTIVATION function=softmax
+
+Optimized IR:
+INPUT shape=[784]
+DENSE units=64 weights=W1 biases=b1
+ACTIVATION function=relu + DENSE units=10 weights=W2 biases=b2
+DENSE units=10 weights=W2 biases=b2
+ACTIVATION function=softmax
+
+Generated Code:
+// INPUT shape=[784]
+// DENSE units=64 weights=W1 biases=b1
+// ACTIVATION function=relu + DENSE units=10 weights=W2 biases=b2
+// DENSE units=10 weights=W2 biases=b2
+// ACTIVATION function=softmax
